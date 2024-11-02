@@ -5,5 +5,20 @@
  * @returns {number}
  */
 module.exports.sumInRange = function sumInRange(start, end) {
-  throw new Error('Not implemented');
+  let sum = 0;
+
+  if (end < start) {
+    const temp = end;
+    // eslint-disable-next-line no-param-reassign
+    end = start;
+    // eslint-disable-next-line no-param-reassign
+    start = temp;
+  }
+
+  for (let i = end; i >= start; i--) {
+    // i-- чтобы считало с конца
+    sum += i;
+  }
+
+  return sum;
 };

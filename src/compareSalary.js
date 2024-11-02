@@ -6,5 +6,24 @@
  * @returns {number}
  */
 module.exports.compareSalary = function compareSalary(firstSalary, secondSalary, thirdSalary) {
-  throw new Error('Not implemented');
+  let lowest;
+  let highest;
+
+  if (firstSalary < secondSalary && firstSalary < thirdSalary) {
+    lowest = firstSalary;
+  } else if (secondSalary < thirdSalary && secondSalary < firstSalary) {
+    lowest = secondSalary;
+  } else {
+    lowest = thirdSalary;
+  }
+
+  if (firstSalary > secondSalary && firstSalary > thirdSalary) {
+    highest = firstSalary;
+  } else if (secondSalary > thirdSalary && secondSalary > firstSalary) {
+    highest = secondSalary;
+  } else {
+    highest = thirdSalary;
+  }
+
+  return highest - lowest;
 };
