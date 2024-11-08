@@ -4,5 +4,15 @@
  * @returns {number}
  */
 module.exports.diffElems = function diffElems(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  if (arr.length === 0) return 0; // Проверка на пустой массив
+
+  const uniqElem = []; // Массив для уникальных элементов
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!uniqElem.includes(arr[i])) {
+      // Проверка на уникальность
+      uniqElem.push(arr[i]); // Наращиваем уникальный
+    }
+  }
+  return uniqElem.length;
 };

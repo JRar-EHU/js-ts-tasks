@@ -5,5 +5,12 @@
  * @returns {boolean}
  */
 module.exports.hasProperty = function hasProperty(object, prop) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  /*
+     for(const check in object) {
+      if (check === prop) return true;
+    }
+    return false;
+  */
+
+  return prop in object;
 };
