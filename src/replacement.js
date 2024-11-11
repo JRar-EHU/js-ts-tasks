@@ -8,5 +8,39 @@
  * @returns {Array<number>}
  */
 module.exports.replacement = function replacement(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  return arr.map(el => {
+    // .map - применение выражения к каждому элементу массива
+
+    const abs = Math.abs(el); // убираем знак
+    const digits = abs.toString().length; // переводим в строку чтобы понять кол-во цифр
+
+    if (digits === 1) {
+      return 1;
+    } else if (digits === 2) {
+      return 2;
+    } else if (digits === 3) {
+      return 3;
+    } else {
+      return 4;
+    }
+  });
+
+  /*
+        // То же самое, только через цикл
+      for (let i = 0; i < arr.length; i++) {
+        const abs = Math.abs(arr[i]);
+        const digits = abs.toString().length;
+
+        if (digits === 1) {
+          arr[i] = 1;
+        } else if (digits === 2) {
+          arr[i] = 2;
+        } else if (digits === 3) {
+          arr[i] = 3
+        } else {
+          arr[i] = 4;
+        }
+       }
+        return arr;
+  */
 };

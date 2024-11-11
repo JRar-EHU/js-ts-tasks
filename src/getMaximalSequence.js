@@ -4,14 +4,10 @@
  * @returns {Object}
  */
 module.exports.getMaximalSequence = function getMaximalSequence(arr) {
-  if (arr.length === 0) return []; // Проверка на пустой массив
-
   let streak = [arr[0]]; // буферный стрик
   let maxStreak = [arr[0]]; // Максимальный стрик
 
   for (let i = 0; i < arr.length; i++) {
-    // Идем по массиву
-
     if (arr[i] === arr[i - 1]) {
       // Проверка на равенство текущего и предыдущего элементов.
 

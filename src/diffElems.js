@@ -4,8 +4,6 @@
  * @returns {number}
  */
 module.exports.diffElems = function diffElems(arr) {
-  if (arr.length === 0) return 0; // Проверка на пустой массив
-
   const uniqElem = []; // Массив для уникальных элементов
 
   for (let i = 0; i < arr.length; i++) {

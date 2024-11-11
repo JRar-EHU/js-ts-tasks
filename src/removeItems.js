@@ -5,5 +5,18 @@
  * @returns {Object}
  */
 module.exports.removeItems = function removeItems(arr, value) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  return arr.filter(element => JSON.stringify(element) !== JSON.stringify(value));
+  // JSON - текстовый формат обмена(?) данными, {} для пар ключ:значение, [] для коллекций
+  // .stringify делает элемент строкой json, дальше сравниваем 2 строки.
+
+  /* не работает с объектами и многомерными массивами
+
+ for (let i = 0; i < arr.length; i++) {
+    if(arr[i] === value) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return arr
+*/
 };
