@@ -4,5 +4,35 @@
  * @returns {function}
  */
 module.exports.primeNumbers = function primeNumbers(highestNumber) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  // Сито Эратосфена
+  return function (start, end) {
+    // -----------------
+    const sito = []; // для хранения типа чисел (простые\составные)
+    sito[0] = false;
+    sito[1] = false;
+    for (let i = 2; i <= end; i++) {
+      // все числа кроме 0,1 "по умолчанию" простые
+      sito[i] = true;
+    }
+    // -----------------
+    for (let i = 2; i * i <= end; i++) {
+      // множители i уже составные
+      if (sito[i]) {
+        // пропуск уже отработанных
+        for (let j = i * i; j <= end; j += i) {
+          // начало i*i, тк предыдущие уже отработаны
+          sito[j] = false; // каждое j кратное i составное
+        }
+      }
+    }
+    // -----------------
+    const primes = [];
+    for (let i = start; i <= end; i++) {
+      if (sito[i]) {
+        primes.push(i);
+      }
+    }
+
+    return primes;
+  };
 };

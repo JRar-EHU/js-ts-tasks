@@ -14,5 +14,26 @@
  * @returns {function}
  */
 module.exports.censorship = function censorship(forbidden) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  forbidden.sort(
+    (
+      a,
+      b // Для корректной замены если строки накладываются
+    ) => b.length - a.length
+  );
+
+  const forbiddenPatterns = forbidden.map(
+    (
+      word // для обработки запрещенных слов, массив объектов
+    ) => ({
+      regex: new RegExp(word, 'g'), // Для поиска
+      length: word.length, // для кол-ва *
+    })
+  );
+
+  return function (str) {
+    forbiddenPatterns.forEach(pattern => {
+      str = str.replace(pattern.regex, '*'.repeat(pattern.length)); // .replace(слово, сколько *)
+    });
+    return str;
+  };
 };
