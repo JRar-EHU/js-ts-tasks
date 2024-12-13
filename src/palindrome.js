@@ -14,7 +14,6 @@
  */
 module.exports.palindrome = function palindrome(TestUtils) {
   return function (str) {
-    //
     const lowStr = str.toLowerCase().replace(/[^a-z0-9]/g, ''); // Подготовка строки
     return TestUtils.isPalindrome.call({ str: lowStr }); // Создаем объект для корректного this
   };
