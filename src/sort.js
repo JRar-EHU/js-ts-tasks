@@ -9,5 +9,8 @@
  * @returns {function}
  */
 module.exports.sort = function sort(TestUtils) {
-  jfkdslgjfdgjklfd;'fjsgklfjgf'
+  return function (...dataToSort) {
+    // ... тк неизвестно кол-во данных для сортировки
+    return dataToSort.sort(TestUtils.sortComparator); // TestUtils.sortComparator в данном случае "настройка" сортировки для .sort
+  };
 };
