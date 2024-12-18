@@ -16,4 +16,3 @@ module.exports.mockApi = function mockApi(response, delay) {
     });
   };
 };
-//
