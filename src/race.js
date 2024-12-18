@@ -8,6 +8,6 @@ module.exports.race = function race(promisesArray) {
     for (let i = 0; i < promisesArray.length; i++) {
       const promise = promisesArray[i];
       promise.then(resolve).catch(reject);
-    }
+    } //
   });
 };
