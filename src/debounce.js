@@ -8,10 +8,11 @@
 module.exports.debounce = function debounce(fn, delay) {
   let timer;
   return (...args) => {
-    if (!timer) fn.apply(this, args);
+    if (!timer) fn(...args);
     clearTimeout(timer);
+
     timer = setTimeout(() => {
-      fn.apply(this, args);
+      fn(...args);
     }, delay);
   };
 };

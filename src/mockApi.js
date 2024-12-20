@@ -9,10 +9,8 @@ module.exports.mockApi = function mockApi(response, delay) {
   return function foo() {
     return new Promise(resolve => {
       setTimeout(() => {
-        setTimeout(() => {
-          resolve(response);
-        }, delay);
-      });
+        resolve(response);
+      }, delay);
     });
   };
 };
