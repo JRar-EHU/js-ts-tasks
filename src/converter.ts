@@ -21,11 +21,11 @@ module.exports.converter = function (
     };
   } = {
     m: {
-      mi: val => val / 1609.34,
+      mi: val => val / 1609.344,
       m: val => val,
     },
     mi: {
-      m: val => val * 1609.34,
+      m: val => val * 1609.344,
       mi: val => val,
     },
     gr: {
@@ -53,5 +53,5 @@ module.exports.converter = function (
   const convertedValue = conversionTable[from][to](formatedValue);
 
   return Math.round(convertedValue * 100) / 100;
-  // return convertedValue.toFixed(2);
+  //   return convertedValue.toFixed(2);
 };
