@@ -3,7 +3,7 @@
  * @param {string | number} value
  * @param {'m'|'mi'|'gr'|'pound'|'C'|'K'} from
  * @param {'m'|'mi'|'gr'|'pound'|'C'|'K'} to
- * @returns {boolean}
+ * @returns {number}
  */
 type Units = 'm' | 'mi' | 'gr' | 'pound' | 'C' | 'K';
 
