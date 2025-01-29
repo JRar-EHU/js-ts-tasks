@@ -6,5 +6,32 @@
  * @returns {boolean}
  */
 module.exports.pangram = function (word: string | number): boolean {
-  throw new Error('Not implemented'); // delete this line and write your code
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const digits = '0123456789';
+  const isString = typeof word === 'string';
+  const checkSet = isString ? alphabet : digits;
+
+  const str = word.toString().toLowerCase();
+
+  for (const char of checkSet) {
+    if (str.indexOf(char) === -1) return false;
+  }
+
+  return true;
+
+  // const str= typeof word === "string" ? word.toLowerCase().replace(/[^a-z]/g, "") : word;
+  // const alphabet = "abcdefjhijklmnopqrstuvwxyz";
+  // const digits = "0123456789";
+  //
+  // if (typeof str ==="string") {
+  //   for (const char of alphabet) {
+  //     if (str.indexOf(letter) === -1) return false
+  //   }
+  //   return true;
+  // }
+  // const foo = word.toString();
+  // for (const digit of digits) {
+  //   if (foo.indexOf(digit) === -1) return false;
+  // }
+  // return true;
 };
